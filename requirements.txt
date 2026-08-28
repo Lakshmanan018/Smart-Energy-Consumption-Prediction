@@ -3,7 +3,8 @@ uvicorn
 pandas
 scikit-learn
 joblib
-tensorflow
-python-multipart
 numpy
 gunicorn
+python-multipart
+# Use a specific TensorFlow version known to work
+tensorflow-cpu==2.13.0
