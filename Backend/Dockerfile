@@ -18,5 +18,5 @@ COPY . .
 # Expose port
 EXPOSE 10000
 
-# Start the application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "10000"]
+# Start the application with gunicorn
+CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "app:app", "--bind", "0.0.0.0:10000"]
